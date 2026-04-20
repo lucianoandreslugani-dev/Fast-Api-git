@@ -14,8 +14,3 @@ def listar_productos():
     return {"productos": productos}
 
 
-@app.post("/productos")
-def agregar_producto(producto: Producto):
-    productos.append(producto)
-    return {"mensaje": f"Producto agregado correctamente", "producto": producto}
-

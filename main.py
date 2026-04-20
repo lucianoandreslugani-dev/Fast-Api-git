@@ -20,12 +20,6 @@ def agregar_producto(producto: Producto):
     return {"mensaje": f"Producto agregado correctamente", "producto": producto}
 
 
-@app.put("/productos/{id}")
-def actualizar_producto(id: int, producto: Producto):
-    if id < 0 or id >= len(productos):
-        return {"error": "Producto no encontrado"}
-    productos[id] = producto
-    return {"mensaje": "Producto actualizado correctamente", "producto": producto}
 
 
 @app.delete("/productos/{id}")
@@ -34,3 +28,7 @@ def eliminar_producto(id: int):
         return {"error": "Producto no encontrado"}
     producto_eliminado = productos.pop(id)
     return {"mensaje": "Producto eliminado correctamente", "producto": producto_eliminado}
+
+
+
+

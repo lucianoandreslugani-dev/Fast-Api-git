@@ -36,9 +36,3 @@ def actualizar_producto(id: int, producto: Producto):
     return {"mensaje": "Producto actualizado correctamente", "producto": producto}
 
 
-@app.delete("/productos/{id}")
-def eliminar_producto(id: int):
-    if id < 0 or id >= len(productos):
-        return {"error": "Producto no encontrado"}
-    producto_eliminado = productos.pop(id)
-    return {"mensaje": "Producto eliminado correctamente", "producto": producto_eliminado}

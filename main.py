@@ -36,3 +36,20 @@ def actualizar_producto(id: int, producto: Producto):
     return {"mensaje": "Producto actualizado correctamente", "producto": producto}
 
 
+@app.put("/productos/{id}")
+def actualizar_producto(id: int, producto: Producto):
+    if id < 0 or id >= len(productos):
+        return {"error": "Producto no encontrado"}
+    productos[id] = producto
+    return {"mensaje": "Producto actualizado correctamente", "producto": producto}
+
+
+
+@app.put("/productos/{id}")
+def actualizar_producto(id: int, producto: Producto):
+    if id < 0 or id >= len(productos):
+        return {"error": "Producto no encontrado"}
+    productos[id] = producto
+    return {"mensaje": "Producto actualizado correctamente", "producto": producto}
+
+
